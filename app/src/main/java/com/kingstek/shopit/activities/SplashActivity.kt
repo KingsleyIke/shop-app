@@ -1,4 +1,4 @@
-package com.kingstek.shopit
+package com.kingstek.shopit.activities
 
 import android.content.Intent
 import android.os.Build
@@ -8,6 +8,8 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.kingstek.shopit.R
+import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,5 +33,9 @@ class SplashActivity : AppCompatActivity() {
             },
             2500
         )
+
+//        val typeface: Typeface = Typeface.createFromAsset(assets, "Montserrat-Bold.ttf")
+//        tv_app_name.typeface = typeface
+
     }
 }
