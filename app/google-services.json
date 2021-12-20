@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "877917441568",
+    "project_id": "shotit-e8fd9",
+    "storage_bucket": "shotit-e8fd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877917441568:android:6387076d36d4035cb2b645",
+        "android_client_info": {
+          "package_name": "com.kingstek.shopit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877917441568-97l418f8nhuc8rrv5jnjv201cp726nqh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kingstek.shopit",
+            "certificate_hash": "cf141a6623dd3ddce56289b1bf184cd6606a6c7a"
+          }
+        },
+        {
+          "client_id": "877917441568-qvb4gr9fgh4ituqf5oillec2pblhr64r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2g6Yr2onp07UuqKYnFKKlb2MPyNekQZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877917441568-qvb4gr9fgh4ituqf5oillec2pblhr64r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
