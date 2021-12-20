@@ -28,14 +28,11 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
                 finish()
             },
             2500
         )
-
-//        val typeface: Typeface = Typeface.createFromAsset(assets, "Montserrat-Bold.ttf")
-//        tv_app_name.typeface = typeface
 
     }
 }
