@@ -18,4 +18,11 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+<!--    <style name="TextLabel" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">-->
+<!--        <item name="android:textColorHint">@color/colorSecondaryText</item>-->
+<!--        <item name="android:textSize">@dimen/txt_terms_and_condition_textSize</item>-->
+<!--        <item name="colorControlNormal">@color/colorPrimaryText</item>-->
+<!--        <item name="colorControlActivated">@color/colorPrimary</item>-->
+<!--    </style>-->
 </resources>
