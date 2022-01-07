@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_black_color_back_24dp.xml" value="0.265625" />
         <entry key="app/src/main/res/drawable/button_background.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.16510416666666666" />
+        <entry key="app/src/main/res/layout/activity_base.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13489583333333333" />
