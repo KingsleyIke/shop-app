@@ -19,6 +19,7 @@ open class BaseActivity : AppCompatActivity() {
         } else {
             ContextCompat.getColor(this@BaseActivity, R.color.colorSnackBarSuccess)
         }
+
         snackbar.show()
     }
 }
