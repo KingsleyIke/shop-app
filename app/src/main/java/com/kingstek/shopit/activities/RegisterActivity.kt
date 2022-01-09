@@ -35,6 +35,7 @@ class RegisterActivity : BaseActivity() {
         }
 
         btn_register.setOnClickListener {
+
             validateRegisterDetails()
         }
     }
