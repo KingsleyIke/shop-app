@@ -32,14 +32,10 @@ class RegisterActivity : BaseActivity() {
         setupActionBar()
 
         tv_login.setOnClickListener {
-
-            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
+           onBackPressed()
         }
 
         btn_register.setOnClickListener {
-
             registerUser()
         }
     }
@@ -107,12 +103,16 @@ class RegisterActivity : BaseActivity() {
 
         if (validateRegisterDetails()) {
 
+            showProgressDialog(resources.getString(R.string.please_wait))
+
             val email: String = et_email.text.toString().trim {it <= ' '}
             val password: String = et_password.text.toString().trim {it <= ' '}
 
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
                     OnCompleteListener<AuthResult> { task ->
+
+                        hideProgressDialog()
 
                         if (task.isSuccessful) {
 
@@ -122,6 +122,10 @@ class RegisterActivity : BaseActivity() {
                                 "you are registered successfully. Your user id is ${firebaseUser.uid}",
                                 false
                             )
+
+                            FirebaseAuth.getInstance().signOut()
+                            finish()
+
                         } else {
                             showErrorSnackBar(task.exception!!.message.toString(), true)
                         }

@@ -22,8 +22,6 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="login"><u>Login</u></string>
 
-    <!--TODO Step 7: For the best practices string values in the string.xml file.-->
-    <!--START-->
     <string name="err_msg_enter_first_name">Please enter first name.</string>
     <string name="err_msg_enter_last_name">Please enter last name.</string>
     <string name="err_msg_enter_email">Please enter email.</string>
@@ -32,5 +30,11 @@
     <string name="err_msg_password_and_confirm_password_mismatch">Password and confirm password does not match.</string>
     <string name="err_msg_agree_terms_and_condition">Please agree terms and condition.</string>
 
-    <!--END-->
+    <string name="please_wait">Please Wait&#8230;</string>
+
+    <string name="title_forgot_password">FORGOT PASSWORD?</string>
+    <string name="forgot_password_title_description">Enter your username and e-mail address we\'ll send you a email to reset your password</string>
+    <string name="btn_lbl_submit">Submit</string>
+
+    <string name="email_sent_success">\"Email sent successfully to reset your password! \"</string>
 </resources>
