@@ -12,7 +12,9 @@
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/app_gradient_color_background"
+        >
 
         <com.kingstek.shopit.utils.MSPTextViewBold
             android:id="@+id/tv_title"
@@ -22,7 +24,7 @@
             android:paddingStart="@dimen/toolbar_title_paddingStart"
             android:paddingEnd="0dp"
             android:text="@string/create_an_account"
-            android:textColor="@color/colorPrimaryText"
+            android:textColor="@color/white"
             android:textSize="@dimen/toolbar_title_text_size" />
 
     </androidx.appcompat.widget.Toolbar>
