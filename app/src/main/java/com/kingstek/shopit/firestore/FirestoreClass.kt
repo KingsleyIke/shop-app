@@ -1,10 +1,14 @@
 package com.kingstek.shopit.firestore
 
+import android.app.Activity
 import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import com.kingstek.shopit.activities.LoginActivity
 import com.kingstek.shopit.activities.RegisterActivity
 import com.kingstek.shopit.models.User
+import com.kingstek.shopit.utils.Constants.USERS
 
 class FirestoreClass {
 
@@ -12,7 +16,7 @@ class FirestoreClass {
 
     fun registerUser (activity: RegisterActivity, userInfo: User) {
 
-        mFirestore.collection("users")
+        mFirestore.collection(USERS)
             .document(userInfo.id)
             .set(userInfo, SetOptions.merge())
             .addOnSuccessListener {
@@ -21,6 +25,41 @@ class FirestoreClass {
             .addOnFailureListener{ e ->
                 activity.hideProgressDialog()
                 Log.e( activity.javaClass.simpleName, "Error while registering the user", e)
+            }
+    }
+
+    fun getCurrentUserID(): String {
+        // An Instance of currentUser using FirebaseAuth
+        val currentUser = FirebaseAuth.getInstance().currentUser
+
+        // A variable to assign the currentUserId if it is not null or else it will be blank.
+        var currentUserID = ""
+        if (currentUser != null) {
+            currentUserID = currentUser.uid
+        }
+
+        return currentUserID
+    }
+
+    fun getUserDetails(activity: Activity) {
+
+        mFirestore.collection(USERS)
+            .document(getCurrentUserID())
+            .get()
+            .addOnSuccessListener { document ->
+                Log.i(activity.javaClass.simpleName, document.toString())
+
+                val user = document.toObject(User::class.java)!!
+
+                when (activity) {
+                    is LoginActivity -> {
+                        activity.userLoggedInSuccess(user)
+                    }
+                }
+            }
+            .addOnFailureListener { e ->
+
+
             }
     }
 }
