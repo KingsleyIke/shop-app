@@ -9,4 +9,8 @@ object Constants {
 
     const val EXTRA_USER_DETAILS: String = "extra_user_details"
 
+    const val READ_STORAGE_PERMISSION_CODE = 2
+
+    const val PICK_IMAGE_REQUEST_CODE = 2
+
 }
