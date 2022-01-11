@@ -9,6 +9,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.kingstek.shopit.activities.LoginActivity
 import com.kingstek.shopit.activities.RegisterActivity
+import com.kingstek.shopit.activities.UserProfileActivity
 import com.kingstek.shopit.models.User
 import com.kingstek.shopit.utils.Constants
 import com.kingstek.shopit.utils.Constants.USERS
@@ -54,16 +55,10 @@ class FirestoreClass {
 
                 val user = document.toObject(User::class.java)!!
 
-                val sharedPreferences = activity.getSharedPreferences(
-                    Constants.MYSHOPPAL_PREFERENCES,
-                    Context.MODE_PRIVATE
-                )
+                val sharedPreferences = activity.getSharedPreferences(Constants.MYSHOPPAL_PREFERENCES, Context.MODE_PRIVATE)
 
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                editor.putString(
-                    Constants.LOGGED_IN_USERNAME,
-                    "${user.firstName} ${user.lastName}"
-                )
+                editor.putString(Constants.LOGGED_IN_USERNAME, "${user.firstName} ${user.lastName}")
                 editor.apply()
 
                 when (activity) {
@@ -73,8 +68,47 @@ class FirestoreClass {
                 }
             }
             .addOnFailureListener { e ->
+                when (activity) {
+                    is LoginActivity -> {
+                        activity.hideProgressDialog()
+                    }
+                }
 
+                Log.e(
+                    activity.javaClass.simpleName,
+                    "Error while getting user details.",
+                    e
+                )
+            }
+    }
 
+    fun updateUserProfileData(activity: Activity, userHashMap: HashMap<String, Any>) {
+
+        mFirestore.collection(Constants.USERS)
+            .document(getCurrentUserID())
+            .update(userHashMap)
+            .addOnSuccessListener {
+
+                when (activity) {
+                    is UserProfileActivity -> {
+
+                        activity.userProfileUpdateSuccess()
+                    }
+                }
+            }
+            .addOnFailureListener { e->
+                when (activity) {
+                    is UserProfileActivity -> {
+
+                        activity.hideProgressDialog()
+                    }
+                }
+
+                Log.e(
+                    activity.javaClass.simpleName,
+                    "Error while updating the user details.",
+                    e
+                )
             }
     }
 }

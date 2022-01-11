@@ -17,6 +17,12 @@ object Constants {
 
     const val PICK_IMAGE_REQUEST_CODE = 1
 
+    const val MALE: String = "Male"
+    const val FEMALE: String = "Female"
+
+    const val MOBILE: String = "mobile"
+    const val GENDER: String = "gender"
+
 
     fun showImageChooser(activity: Activity) {
         // An intent for launching the image selection of phone storage.

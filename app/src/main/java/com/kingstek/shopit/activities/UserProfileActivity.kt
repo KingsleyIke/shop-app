@@ -6,14 +6,17 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.kingstek.shopit.R
+import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.User
 import com.kingstek.shopit.utils.Constants
+import com.kingstek.shopit.utils.GlideLoader
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_register.et_email
 import kotlinx.android.synthetic.main.activity_register.et_first_name
@@ -66,6 +69,29 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
                 R.id.btn_save -> {
 
+                    if(validateUserProfileDetails()) {
+
+                        val userHashMap = HashMap<String, Any>()
+
+                        val mobileNumber = et_mobile_number.text.toString().trim { it <= ' ' }
+
+                        val gender = if (rb_male.isChecked) {
+                            Constants.MALE
+                        } else {
+                            Constants.FEMALE
+                        }
+
+                        if (mobileNumber.isNotEmpty()) {
+                            userHashMap[Constants.MOBILE] = mobileNumber.toLong()
+                        }
+
+                        userHashMap[Constants.GENDER] = gender
+
+                        showProgressDialog(resources.getString(R.string.please_wait))
+
+                        FirestoreClass().updateUserProfileData(this@UserProfileActivity, userHashMap)
+//                        showErrorSnackBar("Details valid", false)
+                    }
                 }
             }
         }
@@ -96,7 +122,9 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                         // The uri of selected image from phone storage.
                         val selectedImageFileUri = data.data!!
 
-                        iv_user_photo.setImageURI(selectedImageFileUri)
+//                        iv_user_photo.setImageURI(selectedImageFileUri)
+
+                        GlideLoader(this@UserProfileActivity).loadUserPicture(selectedImageFileUri, iv_user_photo)
 
                     } catch (e: IOException) {
                         e.printStackTrace()
@@ -106,8 +134,32 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                 }
             }
         } else if (resultCode == Activity.RESULT_CANCELED) {
-            // A log is printed when user close or cancel the image selection.
+
             Log.e("Request Cancelled", "Image selection cancelled")
         }
+    }
+
+    private fun validateUserProfileDetails(): Boolean {
+        return when {
+
+
+            TextUtils.isEmpty(et_mobile_number.text.toString().trim { it <= ' ' }) -> {
+                showErrorSnackBar(resources.getString(R.string.err_msg_enter_mobile_number), true)
+                false
+            }
+            else -> {
+                true
+            }
+        }
+    }
+
+    fun userProfileUpdateSuccess() {
+
+        hideProgressDialog()
+
+        Toast.makeText(this@UserProfileActivity, resources.getString(R.string.msg_profile_update_success), Toast.LENGTH_SHORT).show()
+
+        startActivity(Intent(this@UserProfileActivity, MainActivity::class.java))
+        finish()
     }
 }
