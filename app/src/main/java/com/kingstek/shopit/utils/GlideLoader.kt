@@ -2,6 +2,7 @@ package com.kingstek.shopit.utils
 
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.kingstek.shopit.R
@@ -25,7 +26,7 @@ class GlideLoader(val context: Context) {
                 .placeholder(R.drawable.ic_user_placeholder) // A default place holder if image is failed to load.
                 .into(imageView) // the view in which the image will be loaded.
         } catch (e: IOException) {
-            e.printStackTrace()
+            Log.e(context.javaClass.simpleName, "Exception", e)
         }
     }
 }
