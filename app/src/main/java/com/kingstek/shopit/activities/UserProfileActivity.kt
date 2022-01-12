@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -27,6 +28,7 @@ import java.io.IOException
 class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var mUserDetails: User
+    private var mSelectedImageFileUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -120,11 +122,11 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                 if (data != null) {
                     try {
                         // The uri of selected image from phone storage.
-                        val selectedImageFileUri = data.data!!
+                         mSelectedImageFileUri = data.data!!
 
 //                        iv_user_photo.setImageURI(selectedImageFileUri)
 
-                        GlideLoader(this@UserProfileActivity).loadUserPicture(selectedImageFileUri, iv_user_photo)
+                        GlideLoader(this@UserProfileActivity).loadUserPicture(mSelectedImageFileUri!!, iv_user_photo)
 
                     } catch (e: IOException) {
                         e.printStackTrace()
