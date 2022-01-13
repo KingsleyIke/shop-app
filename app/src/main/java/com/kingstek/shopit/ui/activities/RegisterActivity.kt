@@ -1,8 +1,6 @@
-package com.kingstek.shopit.activities
+package com.kingstek.shopit.ui.activities
 
-import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.WindowInsets

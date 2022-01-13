@@ -10,9 +10,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.kingstek.shopit.activities.LoginActivity
-import com.kingstek.shopit.activities.RegisterActivity
-import com.kingstek.shopit.activities.UserProfileActivity
+import com.kingstek.shopit.ui.activities.LoginActivity
+import com.kingstek.shopit.ui.activities.RegisterActivity
+import com.kingstek.shopit.ui.activities.UserProfileActivity
 import com.kingstek.shopit.models.User
 import com.kingstek.shopit.utils.Constants
 import com.kingstek.shopit.utils.Constants.USERS

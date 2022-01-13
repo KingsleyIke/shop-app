@@ -1,4 +1,4 @@
-package com.kingstek.shopit.activities
+package com.kingstek.shopit.ui.activities
 
 import android.content.Intent
 import android.os.Build

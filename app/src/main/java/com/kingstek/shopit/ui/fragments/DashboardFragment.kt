@@ -1,4 +1,4 @@
-package com.kingstek.shopit.activities.ui.dashboard
+package com.kingstek.shopit.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

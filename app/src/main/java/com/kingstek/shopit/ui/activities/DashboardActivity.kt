@@ -1,4 +1,4 @@
-package com.kingstek.shopit.activities
+package com.kingstek.shopit.ui.activities
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

@@ -1,9 +1,7 @@
-package com.kingstek.shopit.activities
+package com.kingstek.shopit.ui.activities
 
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.kingstek.shopit.R
