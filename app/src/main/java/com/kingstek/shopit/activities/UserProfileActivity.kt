@@ -28,6 +28,7 @@ import java.io.IOException
 class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var mUserDetails: User
+
     private var mSelectedImageFileUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,6 +72,11 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
                 R.id.btn_save -> {
 
+                    showProgressDialog(resources.getString(R.string.please_wait))
+
+                    FirestoreClass().uploadImageToCloudStorage(this, mSelectedImageFileUri)
+
+                    /*
                     if(validateUserProfileDetails()) {
 
                         val userHashMap = HashMap<String, Any>()
@@ -94,6 +100,8 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                         FirestoreClass().updateUserProfileData(this@UserProfileActivity, userHashMap)
 //                        showErrorSnackBar("Details valid", false)
                     }
+
+                    */
                 }
             }
         }
@@ -163,5 +171,14 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
         startActivity(Intent(this@UserProfileActivity, MainActivity::class.java))
         finish()
+    }
+
+    fun imageUploadsuccess(imageUrl: String) {
+
+        hideProgressDialog()
+
+        Toast.makeText(this@UserProfileActivity, "Image Uploaded Successfully. Image URL is $imageUrl", Toast.LENGTH_LONG).show()
+
+
     }
 }
