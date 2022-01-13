@@ -1,11 +1,9 @@
-package com.kingstek.shopit.activities
+package com.kingstek.shopit.ui.activities
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -50,7 +48,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 R.id.tv_register -> {
-                    val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+                    val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                     startActivity(intent)
                 }
 
@@ -108,11 +106,6 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 
         // Hide the progress dialog.
         hideProgressDialog()
-
-        // Print the user details in the log as of now.
-        Log.i("First Name: ", user.firstName)
-        Log.i("Last Name: ", user.lastName)
-        Log.i("Email: ", user.email)
 
         if (user.profileCompleted == 0) {
             // If the user profile is incomplete then launch the UserProfileActivity.

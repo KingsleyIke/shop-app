@@ -1,4 +1,4 @@
-package com.kingstek.shopit.activities
+package com.kingstek.shopit.ui.activities
 
 import android.content.Intent
 import android.os.Build
@@ -28,7 +28,8 @@ class SplashActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+//                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                startActivity(Intent(this@SplashActivity, DashboardActivity::class.java))
                 finish()
             },
             2500
