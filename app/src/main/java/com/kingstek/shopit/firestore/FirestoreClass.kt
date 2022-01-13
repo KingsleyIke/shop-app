@@ -136,7 +136,7 @@ class FirestoreClass {
 
                     when (activity) {
                         is UserProfileActivity -> {
-                            activity.imageUploadsuccess(uri.toString())
+                            activity.imageUploadSuccess(uri.toString())
                         }
                     }
                 }

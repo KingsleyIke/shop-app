@@ -172,6 +172,8 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
         userHashMap[Constants.GENDER] = gender
 
+        userHashMap[Constants.COMPLETE_PROFILE] = 1
+
 //        showProgressDialog(resources.getString(R.string.please_wait))
 
         FirestoreClass().updateUserProfileData(this@UserProfileActivity, userHashMap)
@@ -187,11 +189,9 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         finish()
     }
 
-    fun imageUploadsuccess(imageUrl: String) {
+    fun imageUploadSuccess(imageURL: String) {
 
-//        hideProgressDialog()
-
-        Toast.makeText(this@UserProfileActivity, "Image Uploaded Successfully. Image URL is $imageUrl", Toast.LENGTH_LONG).show()
+        mUserProfileImageURL = imageURL
 
         updateUserProfileDetails()
     }
