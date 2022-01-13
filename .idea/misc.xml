@@ -22,6 +22,7 @@
         <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/dialog_progress.xml" value="0.22" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/menu/dashboard_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

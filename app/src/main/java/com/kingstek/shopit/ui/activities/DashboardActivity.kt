@@ -17,6 +17,7 @@ class DashboardActivity : BaseActivity() {
 
         supportActionBar!!.setBackgroundDrawable(
             ContextCompat.getDrawable(this@DashboardActivity, R.drawable.app_gradient_color_background)
+
         )
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
