@@ -50,7 +50,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 R.id.tv_register -> {
-                    val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+                    val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                     startActivity(intent)
                 }
 

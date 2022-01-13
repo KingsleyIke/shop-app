@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_white_color_back_24dp.xml" value="0.265625" />
         <entry key="app/src/main/res/drawable/user_image_background.xml" value="0.2984375" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.24947916666666667" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_forget_password.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28229166666666666" />
