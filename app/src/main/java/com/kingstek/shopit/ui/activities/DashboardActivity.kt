@@ -16,10 +16,7 @@ class DashboardActivity : BaseActivity() {
         setContentView(R.layout.activity_dashboard)
 
         supportActionBar!!.setBackgroundDrawable(
-            ContextCompat.getDrawable(
-                this@DashboardActivity,
-                R.drawable.app_gradient_color_background
-            )
+            ContextCompat.getDrawable(this@DashboardActivity, R.drawable.app_gradient_color_background)
         )
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
@@ -29,7 +26,7 @@ class DashboardActivity : BaseActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_dashboard, R.id.navigation_products, R.id.navigation_orders
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
