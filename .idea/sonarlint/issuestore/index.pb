@@ -7,22 +7,14 @@ n
 >app/src/main/java/com/kingstek/shopit/utils/MSPTextViewBold.kt,5/3/532b32d0b42ec1cfed2477cb89b630b3a79ae473
 d
 4app/src/main/java/com/kingstek/shopit/models/User.kt,3/2/32e59e302b8bfcaf461e6d69606aa5a902d95bf3
-j
-:app/src/main/java/com/kingstek/shopit/utils/GlideLoader.kt,9/5/95929a90c414d5c01c55672e38a20a9080afd835
 h
 8app/src/main/java/com/kingstek/shopit/utils/Constants.kt,4/6/46b98d8b46086a862d5a4bb9ec953c1c174b8e66
-q
-Aapp/src/main/java/com/kingstek/shopit/firestore/FirestoreClass.kt,1/3/13527087113e3fffd1ee919a6a1eb6a3cceb2c82
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 }
 Mapp/src/main/java/com/kingstek/shopit/ui/activities/ForgotPasswordActivity.kt,8/2/8291926d0aa36a068fd59f9b1b8f0bc92050c2ba
 w
 Gapp/src/main/java/com/kingstek/shopit/ui/activities/RegisterActivity.kt,4/c/4c61ef5816fbc65e76e7e501a6d265e1b1353299
 t
 Dapp/src/main/java/com/kingstek/shopit/ui/activities/LoginActivity.kt,9/f/9f3a66d1aa98b1a8d9de244a957b37adcbf22be1
-u
-Eapp/src/main/java/com/kingstek/shopit/ui/activities/SplashActivity.kt,f/6/f655ae99d7ab5cc0ff52a3fa230062d71047ed70
 s
 Capp/src/main/java/com/kingstek/shopit/ui/activities/MainActivity.kt,d/a/da3acc9607005f39c4be9980ef62883f73c72ee2
 @
