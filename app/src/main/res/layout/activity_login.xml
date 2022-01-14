@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/colorWhite"
     tools:context=".ui.activities.LoginActivity">
 
     <FrameLayout
@@ -30,7 +30,7 @@
         android:contentDescription="@string/app_name"
         android:scaleType="fitCenter"
         android:src="@drawable/tutorials_eu_logo"
-        app:tint="@color/white" />
+        app:tint="@color/colorWhite" />
 </FrameLayout>
 
     <com.kingstek.shopit.utils.MSPTextViewBold

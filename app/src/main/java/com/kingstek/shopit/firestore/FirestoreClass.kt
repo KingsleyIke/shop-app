@@ -14,6 +14,7 @@ import com.kingstek.shopit.ui.activities.LoginActivity
 import com.kingstek.shopit.ui.activities.RegisterActivity
 import com.kingstek.shopit.ui.activities.UserProfileActivity
 import com.kingstek.shopit.models.User
+import com.kingstek.shopit.ui.activities.SettingsActivity
 import com.kingstek.shopit.utils.Constants
 import com.kingstek.shopit.utils.Constants.USERS
 
@@ -68,11 +69,19 @@ class FirestoreClass {
                     is LoginActivity -> {
                         activity.userLoggedInSuccess(user)
                     }
+
+                    is SettingsActivity -> {
+                        activity.userDetailsSuccess(user)
+                    }
                 }
             }
             .addOnFailureListener { e ->
                 when (activity) {
                     is LoginActivity -> {
+                        activity.hideProgressDialog()
+                    }
+
+                    is SettingsActivity -> {
                         activity.hideProgressDialog()
                     }
                 }

@@ -48,7 +48,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 R.id.tv_register -> {
-                    val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
+                    val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
                     startActivity(intent)
                 }
 
@@ -114,7 +114,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             startActivity(intent)
         } else {
             // Redirect the user to Main Screen after log in.
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
         }
         finish()
     }

@@ -24,7 +24,7 @@
             android:paddingStart="@dimen/toolbar_title_paddingStart"
             android:paddingEnd="0dp"
             android:text="@string/create_an_account"
-            android:textColor="@color/white"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/toolbar_title_text_size" />
 
     </androidx.appcompat.widget.Toolbar>

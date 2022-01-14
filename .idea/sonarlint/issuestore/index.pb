@@ -5,3 +5,17 @@ h
 8app/src/main/java/com/kingstek/shopit/utils/MSPButton.kt,0/e/0e380e5f2e6f74029257670cdf6d962ed8416009
 n
 >app/src/main/java/com/kingstek/shopit/utils/MSPTextViewBold.kt,5/3/532b32d0b42ec1cfed2477cb89b630b3a79ae473
+d
+4app/src/main/java/com/kingstek/shopit/models/User.kt,3/2/32e59e302b8bfcaf461e6d69606aa5a902d95bf3
+}
+Mapp/src/main/java/com/kingstek/shopit/ui/activities/ForgotPasswordActivity.kt,8/2/8291926d0aa36a068fd59f9b1b8f0bc92050c2ba
+w
+Gapp/src/main/java/com/kingstek/shopit/ui/activities/RegisterActivity.kt,4/c/4c61ef5816fbc65e76e7e501a6d265e1b1353299
+s
+Capp/src/main/java/com/kingstek/shopit/ui/activities/MainActivity.kt,d/a/da3acc9607005f39c4be9980ef62883f73c72ee2
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+t
+Dapp/src/main/java/com/kingstek/shopit/ui/fragments/OrdersFragment.kt,7/5/751c5a621ee045f98847d2bf1fe4f22e5a0db772
+x
+Happ/src/main/java/com/kingstek/shopit/ui/activities/DashboardActivity.kt,b/d/bd716fa544d267b99d77d010b3f376ca93caedc3
