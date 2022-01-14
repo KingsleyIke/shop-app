@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_black_color_back_24dp.xml" value="0.265625" />
+        <entry key="app/src/main/res/drawable-v24/ic_vector_add_product.xml" value="0.265625" />
         <entry key="app/src/main/res/drawable-v24/ic_vector_chevron_right.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable-v24/item_grey_border_background.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/app_gradient_color_background.xml" value="0.2984375" />
@@ -27,6 +28,7 @@
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.26481481481481484" />
         <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.14947916666666666" />
         <entry key="app/src/main/res/layout/fragment_products.xml" value="0.14947916666666666" />
+        <entry key="app/src/main/res/menu/add_product_menu.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/menu/dashboard_menu.xml" value="0.1" />
       </map>
