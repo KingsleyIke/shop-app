@@ -1,13 +1,16 @@
 package com.myshoppal.ui.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.shopit.R
 import com.kingstek.shopit.models.Product
+import com.kingstek.shopit.ui.activities.ProductDetailsActivity
 import com.kingstek.shopit.ui.fragments.ProductsFragment
+import com.kingstek.shopit.utils.Constants
 import com.kingstek.shopit.utils.GlideLoader
 import kotlinx.android.synthetic.main.item_list_layout.view.*
 
@@ -32,6 +35,13 @@ open class MyProductsListAdapter(private val context: Context, private var list:
             holder.itemView.ib_delete_product.setOnClickListener {
 
                 fragment.deleteProduct(model.product_id)
+            }
+
+            holder.itemView.setOnClickListener {
+                // Launch Product details screen.
+                val intent = Intent(context, ProductDetailsActivity::class.java)
+                intent.putExtra(Constants.EXTRA_PRODUCT_ID, model.product_id)
+                context.startActivity(intent)
             }
         }
     }
