@@ -21,8 +21,6 @@ s
 Capp/src/main/java/com/kingstek/shopit/ui/activities/BaseActivity.kt,6/c/6c809d82897d7e737e1b0e5b43c78c3431bf1cb7
 t
 Dapp/src/main/java/com/kingstek/shopit/ui/activities/LoginActivity.kt,9/f/9f3a66d1aa98b1a8d9de244a957b37adcbf22be1
-w
-Gapp/src/main/java/com/kingstek/shopit/ui/activities/SettingsActivity.kt,c/9/c986f7d6819797c9b51863ae36bfd064f1a7787b
 z
 Japp/src/main/java/com/kingstek/shopit/ui/activities/UserProfileActivity.kt,f/6/f626918addda21d04ff83afec83a76896c175447
 u
