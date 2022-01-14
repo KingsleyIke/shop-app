@@ -13,6 +13,7 @@ import com.kingstek.shopit.R
 import com.kingstek.shopit.ui.adapters.DashboardItemsListAdapter
 import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.Product
+import com.kingstek.shopit.ui.activities.CartListActivity
 import com.kingstek.shopit.ui.activities.ProductDetailsActivity
 import com.kingstek.shopit.ui.activities.SettingsActivity
 import com.kingstek.shopit.utils.Constants
@@ -46,10 +47,10 @@ class DashboardFragment : BaseFragment() {
                 return true
             }
 
-//            R.id.action_cart -> {
-//                startActivity(Intent(activity, CartListActivity::class.java))
-//                return true
-//            }
+            R.id.action_cart -> {
+                startActivity(Intent(activity, CartListActivity::class.java))
+                return true
+            }
         }
 
         return super.onOptionsItemSelected(item)
