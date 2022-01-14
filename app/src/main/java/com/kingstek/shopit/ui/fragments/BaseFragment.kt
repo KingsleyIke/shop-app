@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.dialog_progress.*
  * Use the [BaseFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BaseFragment : Fragment() {
+open class BaseFragment : Fragment() {
 
     private lateinit var mProgressDialog: Dialog
 
