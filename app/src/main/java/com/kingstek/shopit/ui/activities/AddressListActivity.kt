@@ -1,11 +1,13 @@
 package com.kingstek.shopit.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.kingstek.shopit.R
+import com.kingstek.shopit.utils.Constants
 import kotlinx.android.synthetic.main.activity_address_list.*
 
-class AddressListActivity : AppCompatActivity() {
+class AddressListActivity : BaseActivity() {
 
     private var mSelectAddress: Boolean = false
 
@@ -14,6 +16,12 @@ class AddressListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_address_list)
 
         setupActionBar()
+
+        tv_add_address.setOnClickListener {
+            val intent = Intent(this@AddressListActivity, AddEditAddressActivity::class.java)
+            startActivity(intent)
+            // END
+        }
 
     }
 

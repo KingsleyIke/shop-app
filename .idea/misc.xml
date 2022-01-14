@@ -23,6 +23,7 @@
         <entry key="app/src/main/res/drawable/ic_vector_dashboard.xml" value="0.2984375" />
         <entry key="app/src/main/res/drawable/ic_white_color_back_24dp.xml" value="0.265625" />
         <entry key="app/src/main/res/drawable/user_image_background.xml" value="0.2984375" />
+        <entry key="app/src/main/res/layout/activity_add_edit_address.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/layout/activity_add_product.xml" value="0.21" />
         <entry key="app/src/main/res/layout/activity_address_list.xml" value="0.23541666666666666" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.24947916666666667" />
