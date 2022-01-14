@@ -10,6 +10,8 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kingstek.shopit.R
@@ -96,5 +98,55 @@ class ProductsFragment : BaseFragment() {
     fun deleteProduct(productID: String) {
 
         showAlertDialogToDeleteProduct(productID)
+    }
+
+    private fun showAlertDialogToDeleteProduct(productID: String) {
+
+        val builder = AlertDialog.Builder(requireActivity())
+        //set title for alert dialog
+        builder.setTitle(resources.getString(R.string.delete_dialog_title))
+        //set message for alert dialog
+        builder.setMessage(resources.getString(R.string.delete_dialog_message))
+        builder.setIcon(android.R.drawable.ic_dialog_alert)
+
+        //performing positive action
+        builder.setPositiveButton(resources.getString(R.string.yes)) { dialogInterface, _ ->
+
+            // START
+            // Show the progress dialog.
+            showProgressDialog(resources.getString(R.string.please_wait))
+
+            // Call the function of Firestore class.
+            FirestoreClass().deleteProduct(this@ProductsFragment, productID)
+            // END
+
+            dialogInterface.dismiss()
+        }
+
+        //performing negative action
+        builder.setNegativeButton(resources.getString(R.string.no)) { dialogInterface, _ ->
+
+            dialogInterface.dismiss()
+        }
+        // Create the AlertDialog
+        val alertDialog: AlertDialog = builder.create()
+        // Set other dialog properties
+        alertDialog.setCancelable(false)
+        alertDialog.show()
+    }
+
+    fun productDeleteSuccess() {
+
+        // Hide the progress dialog
+        hideProgressDialog()
+
+        Toast.makeText(
+            requireActivity(),
+            resources.getString(R.string.product_delete_success_message),
+            Toast.LENGTH_SHORT
+        ).show()
+
+        // Get the latest products list from cloud firestore.
+        getProductListFromFireStore()
     }
 }
