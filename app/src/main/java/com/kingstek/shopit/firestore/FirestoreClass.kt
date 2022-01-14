@@ -17,6 +17,7 @@ import com.kingstek.shopit.ui.activities.RegisterActivity
 import com.kingstek.shopit.ui.activities.UserProfileActivity
 import com.kingstek.shopit.models.User
 import com.kingstek.shopit.ui.activities.AddProductActivity
+import com.kingstek.shopit.ui.activities.ProductDetailsActivity
 import com.kingstek.shopit.ui.activities.SettingsActivity
 import com.kingstek.shopit.ui.fragments.DashboardFragment
 import com.kingstek.shopit.ui.fragments.ProductsFragment
@@ -178,7 +179,6 @@ class FirestoreClass {
 
     }
 
-
     fun uploadProductDetails(activity: AddProductActivity, productInfo: Product) {
 
         mFirestore.collection(Constants.PRODUCTS)
@@ -293,6 +293,31 @@ class FirestoreClass {
                     "Error while deleting the product.",
                     e
                 )
+            }
+    }
+
+    fun getProductDetails(activity: ProductDetailsActivity, productId: String) {
+
+        // The collection name for PRODUCTS
+        mFirestore.collection(Constants.PRODUCTS)
+            .document(productId)
+            .get() // Will get the document snapshots.
+            .addOnSuccessListener { document ->
+
+                // Here we get the product details in the form of document.
+                Log.e(activity.javaClass.simpleName, document.toString())
+
+                // Convert the snapshot to the object of Product data model class.
+                val product = document.toObject(Product::class.java)!!
+
+                activity.productDetailsSuccess(product)
+            }
+            .addOnFailureListener { e ->
+
+                // Hide the progress dialog if there is an error.
+                activity.hideProgressDialog()
+
+                Log.e(activity.javaClass.simpleName, "Error while getting the product details.", e)
             }
     }
 }

@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import com.kingstek.shopit.R
 import com.kingstek.shopit.firestore.FirestoreClass
+import com.kingstek.shopit.models.Product
 import com.kingstek.shopit.utils.Constants
+import com.kingstek.shopit.utils.GlideLoader
 import kotlinx.android.synthetic.main.activity_product_details.*
 
-class ProductDetailsActivity : AppCompatActivity() {
+class ProductDetailsActivity : BaseActivity() {
 
     private var mProductId: String = ""
 
@@ -46,5 +48,22 @@ class ProductDetailsActivity : AppCompatActivity() {
 
         // Call the function of FirestoreClass to get the product details.
         FirestoreClass().getProductDetails(this@ProductDetailsActivity, mProductId)
+    }
+
+    fun productDetailsSuccess(product: Product) {
+
+        // Hide Progress dialog.
+        hideProgressDialog()
+
+        // Populate the product details in the UI.
+        GlideLoader(this@ProductDetailsActivity).loadProductPicture(
+            product.image,
+            iv_product_detail_image
+        )
+
+        tv_product_details_title.text = product.title
+        tv_product_details_price.text = "$${product.price}"
+        tv_product_details_description.text = product.description
+        tv_product_details_stock_quantity.text = product.stock_quantity
     }
 }

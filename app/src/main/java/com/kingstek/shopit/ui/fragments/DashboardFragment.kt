@@ -13,7 +13,9 @@ import com.kingstek.shopit.R
 import com.kingstek.shopit.ui.adapters.DashboardItemsListAdapter
 import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.Product
+import com.kingstek.shopit.ui.activities.ProductDetailsActivity
 import com.kingstek.shopit.ui.activities.SettingsActivity
+import com.kingstek.shopit.utils.Constants
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 class DashboardFragment : BaseFragment() {
@@ -77,6 +79,18 @@ class DashboardFragment : BaseFragment() {
 
             val adapter = DashboardItemsListAdapter(requireActivity(), dashboardItemsList)
             rv_dashboard_items.adapter = adapter
+
+            adapter.setOnClickListener(object :
+                DashboardItemsListAdapter.OnClickListener {
+                override fun onClick(position: Int, product: Product) {
+
+                    val intent = Intent(context, ProductDetailsActivity::class.java)
+                    intent.putExtra(Constants.EXTRA_PRODUCT_ID, product.product_id)
+                    startActivity(intent)
+
+                }
+            })
+
         } else {
             rv_dashboard_items.visibility = View.GONE
             tv_no_dashboard_items_found.visibility = View.VISIBLE
