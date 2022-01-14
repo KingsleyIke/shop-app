@@ -92,4 +92,9 @@ class ProductsFragment : BaseFragment() {
         // Call the function of Firestore class.
         FirestoreClass().getProductsList(this@ProductsFragment)
     }
+
+    fun deleteProduct(productID: String) {
+
+        showAlertDialogToDeleteProduct(productID)
+    }
 }

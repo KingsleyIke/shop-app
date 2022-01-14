@@ -31,7 +31,7 @@ open class MyProductsListAdapter(private val context: Context, private var list:
 
             holder.itemView.ib_delete_product.setOnClickListener {
 
-//                fragment.deleteProduct(model.product_id)
+                fragment.deleteProduct(model.product_id)
             }
         }
     }
