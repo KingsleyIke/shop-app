@@ -1,4 +1,4 @@
-package com.kingstek.shopit.adapters
+package com.kingstek.shopit.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context

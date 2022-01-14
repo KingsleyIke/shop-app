@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kingstek.shopit.R
-import com.kingstek.shopit.adapters.DashboardItemsListAdapter
+import com.kingstek.shopit.ui.adapters.DashboardItemsListAdapter
 import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.Product
 import com.kingstek.shopit.ui.activities.SettingsActivity
