@@ -17,5 +17,3 @@ Capp/src/main/java/com/kingstek/shopit/ui/activities/MainActivity.kt,d/a/da3acc
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 t
 Dapp/src/main/java/com/kingstek/shopit/ui/fragments/OrdersFragment.kt,7/5/751c5a621ee045f98847d2bf1fe4f22e5a0db772
-x
-Happ/src/main/java/com/kingstek/shopit/ui/activities/DashboardActivity.kt,b/d/bd716fa544d267b99d77d010b3f376ca93caedc3
