@@ -17,3 +17,25 @@ Capp/src/main/java/com/kingstek/shopit/ui/activities/MainActivity.kt,d/a/da3acc
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 t
 Dapp/src/main/java/com/kingstek/shopit/ui/fragments/OrdersFragment.kt,7/5/751c5a621ee045f98847d2bf1fe4f22e5a0db772
+s
+Capp/src/main/java/com/kingstek/shopit/ui/activities/BaseActivity.kt,6/c/6c809d82897d7e737e1b0e5b43c78c3431bf1cb7
+t
+Dapp/src/main/java/com/kingstek/shopit/ui/activities/LoginActivity.kt,9/f/9f3a66d1aa98b1a8d9de244a957b37adcbf22be1
+w
+Gapp/src/main/java/com/kingstek/shopit/ui/activities/SettingsActivity.kt,c/9/c986f7d6819797c9b51863ae36bfd064f1a7787b
+z
+Japp/src/main/java/com/kingstek/shopit/ui/activities/UserProfileActivity.kt,f/6/f626918addda21d04ff83afec83a76896c175447
+u
+Eapp/src/main/java/com/kingstek/shopit/ui/activities/SplashActivity.kt,f/6/f655ae99d7ab5cc0ff52a3fa230062d71047ed70
+g
+7app/src/main/java/com/kingstek/shopit/models/Product.kt,5/d/5dc1d9fe3d53d1910c69c564a8e9efc53ae82026
+r
+Bapp/src/main/java/com/kingstek/shopit/ui/fragments/BaseFragment.kt,e/b/eb5b0e1009b98cb4cb116adab74612ff0e8ae748
+j
+:app/src/main/java/com/kingstek/shopit/utils/GlideLoader.kt,9/5/95929a90c414d5c01c55672e38a20a9080afd835
+x
+Happ/src/main/java/com/kingstek/shopit/ui/activities/DashboardActivity.kt,b/d/bd716fa544d267b99d77d010b3f376ca93caedc3
+v
+Fapp/src/main/java/com/kingstek/shopit/ui/fragments/ProductsFragment.kt,3/f/3f3de93ddf29609d607b3709f995f432f8537a8d
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
