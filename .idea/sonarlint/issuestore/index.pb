@@ -37,5 +37,3 @@ x
 Happ/src/main/java/com/kingstek/shopit/ui/activities/DashboardActivity.kt,b/d/bd716fa544d267b99d77d010b3f376ca93caedc3
 v
 Fapp/src/main/java/com/kingstek/shopit/ui/fragments/ProductsFragment.kt,3/f/3f3de93ddf29609d607b3709f995f432f8537a8d
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e

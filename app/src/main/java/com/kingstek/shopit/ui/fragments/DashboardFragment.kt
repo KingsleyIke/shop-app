@@ -13,6 +13,7 @@ import com.kingstek.shopit.R
 import com.kingstek.shopit.ui.adapters.DashboardItemsListAdapter
 import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.Product
+import com.kingstek.shopit.ui.activities.CartListActivity
 import com.kingstek.shopit.ui.activities.ProductDetailsActivity
 import com.kingstek.shopit.ui.activities.SettingsActivity
 import com.kingstek.shopit.utils.Constants
@@ -38,12 +39,16 @@ class DashboardFragment : BaseFragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         val id = item.itemId
 
         when (id) {
             R.id.action_settings -> {
                 startActivity((Intent(activity, SettingsActivity::class.java)))
+                return true
+            }
+
+            R.id.action_cart -> {
+                startActivity(Intent(activity, CartListActivity::class.java))
                 return true
             }
         }
@@ -66,7 +71,6 @@ class DashboardFragment : BaseFragment() {
 
     fun successDashboardItemsList(dashboardItemsList: ArrayList<Product>) {
 
-        // Hide the progress dialog.
         hideProgressDialog()
 
         if (dashboardItemsList.size > 0) {
@@ -86,6 +90,7 @@ class DashboardFragment : BaseFragment() {
 
                     val intent = Intent(context, ProductDetailsActivity::class.java)
                     intent.putExtra(Constants.EXTRA_PRODUCT_ID, product.product_id)
+                    intent.putExtra(Constants.EXTRA_PRODUCT_OWNER_ID, product.user_id)
                     startActivity(intent)
 
                 }
