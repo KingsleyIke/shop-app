@@ -112,15 +112,12 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                 R.id.btn_save -> {
 
                     if(validateUserProfileDetails()) {
-
                         showProgressDialog(resources.getString(R.string.please_wait))
-
                         if (mSelectedImageFileUri != null) {
 
-                            FirestoreClass().uploadImageToCloudStorage(this, mSelectedImageFileUri)
+                            FirestoreClass().uploadImageToCloudStorage(this, mSelectedImageFileUri, Constants.USER_PROFILE_IMAGE)
 
                         } else {
-
                             updateUserProfileDetails()
 
                         }
@@ -129,6 +126,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             }
         }
     }
+
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
 

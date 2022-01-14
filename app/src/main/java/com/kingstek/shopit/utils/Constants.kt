@@ -9,6 +9,7 @@ import android.webkit.MimeTypeMap
 object Constants {
 
     const val USERS: String = "users"
+    const val PRODUCTS: String = "products"
 
     const val MYSHOPPAL_PREFERENCES: String = "MyShopPalPrefs"
     const val LOGGED_IN_USERNAME: String = "logged_in_username"
@@ -31,7 +32,11 @@ object Constants {
     const val FIRST_NAME: String = "firstName"
     const val LAST_NAME: String = "lastName"
 
+    const val USER_ID: String = "user_id"
+
     const val USER_PROFILE_IMAGE:String = "User_Profile_Image"
+    const val PRODUCT_IMAGE: String = "Product_Image"
+
 
 
     fun showImageChooser(activity: Activity) {
