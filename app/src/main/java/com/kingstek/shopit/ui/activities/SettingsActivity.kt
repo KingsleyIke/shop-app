@@ -1,10 +1,13 @@
 package com.kingstek.shopit.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.google.firebase.auth.FirebaseAuth
 import com.kingstek.shopit.R
 import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.User
+import com.kingstek.shopit.utils.Constants
 import com.kingstek.shopit.utils.GlideLoader
 import kotlinx.android.synthetic.main.activity_settings.*
 
@@ -17,6 +20,9 @@ class SettingsActivity : BaseActivity(), View.OnClickListener{
         setContentView(R .layout.activity_settings)
 
         setupActionBar()
+
+        tv_edit.setOnClickListener(this@SettingsActivity)
+        btn_logout.setOnClickListener(this@SettingsActivity)
     }
 
     private fun setupActionBar() {
@@ -32,8 +38,29 @@ class SettingsActivity : BaseActivity(), View.OnClickListener{
         toolbar_settings_activity.setNavigationOnClickListener { onBackPressed() }
     }
 
-    override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
+    override fun onClick(v: View?) {
+
+        if (v != null) {
+            when (v.id) {
+
+                R.id.btn_logout -> {
+                    FirebaseAuth.getInstance().signOut()
+
+                    val intent = Intent(this@SettingsActivity, LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
+                }
+
+                R.id.tv_edit -> {
+
+                    val intent = Intent(this@SettingsActivity, UserProfileActivity::class.java)
+                    intent.putExtra(Constants.EXTRA_USER_DETAILS, mUserDetails)
+                    startActivity(intent)
+
+                }
+            }
+        }
     }
 
     private fun getUserDetails() {

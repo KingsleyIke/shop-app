@@ -7,14 +7,10 @@ n
 >app/src/main/java/com/kingstek/shopit/utils/MSPTextViewBold.kt,5/3/532b32d0b42ec1cfed2477cb89b630b3a79ae473
 d
 4app/src/main/java/com/kingstek/shopit/models/User.kt,3/2/32e59e302b8bfcaf461e6d69606aa5a902d95bf3
-h
-8app/src/main/java/com/kingstek/shopit/utils/Constants.kt,4/6/46b98d8b46086a862d5a4bb9ec953c1c174b8e66
 }
 Mapp/src/main/java/com/kingstek/shopit/ui/activities/ForgotPasswordActivity.kt,8/2/8291926d0aa36a068fd59f9b1b8f0bc92050c2ba
 w
 Gapp/src/main/java/com/kingstek/shopit/ui/activities/RegisterActivity.kt,4/c/4c61ef5816fbc65e76e7e501a6d265e1b1353299
-t
-Dapp/src/main/java/com/kingstek/shopit/ui/activities/LoginActivity.kt,9/f/9f3a66d1aa98b1a8d9de244a957b37adcbf22be1
 s
 Capp/src/main/java/com/kingstek/shopit/ui/activities/MainActivity.kt,d/a/da3acc9607005f39c4be9980ef62883f73c72ee2
 @

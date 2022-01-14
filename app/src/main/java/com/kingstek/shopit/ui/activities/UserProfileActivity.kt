@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -42,14 +43,50 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             mUserDetails = intent.getParcelableExtra(Constants.EXTRA_USER_DETAILS)!!
         }
 
-        et_first_name.isEnabled = false
-        et_first_name.setText(mUserDetails.firstName)
+        val tv_title = findViewById<TextView>(R.id.tv_title)
 
-        et_last_name.isEnabled = false
-        et_last_name.setText(mUserDetails.lastName)
+        if (mUserDetails.profileCompleted == 0) {
+            // Update the title of the screen to complete profile.
+            tv_title.text = resources.getString(R.string.title_complete_profile)
 
-        et_email.isEnabled = false
-        et_email.setText(mUserDetails.email)
+            // Here, the some of the edittext components are disabled because it is added at a time of Registration.
+            et_first_name.isEnabled = false
+            et_first_name.setText(mUserDetails.firstName)
+
+            et_last_name.isEnabled = false
+            et_last_name.setText(mUserDetails.lastName)
+
+            et_email.isEnabled = false
+            et_email.setText(mUserDetails.email)
+        } else {
+
+            // Call the setup action bar function.
+            setupActionBar()
+
+            // Update the title of the screen to edit profile.
+            tv_title.text = resources.getString(R.string.title_edit_profile)
+
+            // Load the image using the GlideLoader class with the use of Glide Library.
+            GlideLoader(this@UserProfileActivity).loadUserPicture(mUserDetails.image, iv_user_photo)
+
+            // Set the existing values to the UI and allow user to edit except the Email ID.
+            et_first_name.setText(mUserDetails.firstName)
+            et_last_name.setText(mUserDetails.lastName)
+
+            et_email.isEnabled = false
+            et_email.setText(mUserDetails.email)
+
+            if (mUserDetails.mobile != 0L) {
+                et_mobile_number.setText(mUserDetails.mobile.toString())
+            }
+            if (mUserDetails.gender == Constants.MALE) {
+                rb_male.isChecked = true
+            } else {
+                rb_female.isChecked = true
+            }
+        }
+
+
 
         iv_user_photo.setOnClickListener(this@UserProfileActivity)
         btn_save.setOnClickListener(this)
@@ -135,6 +172,19 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
+    private fun setupActionBar() {
+
+        setSupportActionBar(toolbar_user_profile_activity)
+
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_white_color_back_24dp)
+        }
+
+        toolbar_user_profile_activity.setNavigationOnClickListener { onBackPressed() }
+    }
+
     private fun validateUserProfileDetails(): Boolean {
         return when {
 
@@ -153,6 +203,18 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
         val userHashMap = HashMap<String, Any>()
 
+
+
+        val firstName = et_first_name.text.toString().trim { it <= ' ' }
+        if (firstName != mUserDetails.firstName) {
+            userHashMap[Constants.FIRST_NAME] = firstName
+        }
+
+        val lastName = et_last_name.text.toString().trim { it <= ' ' }
+        if (lastName != mUserDetails.lastName) {
+            userHashMap[Constants.LAST_NAME] = lastName
+        }
+
         val mobileNumber = et_mobile_number.text.toString().trim { it <= ' ' }
 
         val gender = if (rb_male.isChecked) {
@@ -165,8 +227,12 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             userHashMap[Constants.IMAGE] = mUserProfileImageURL
         }
 
-        if (mobileNumber.isNotEmpty()) {
+        if (mobileNumber.isNotEmpty() && mobileNumber != mUserDetails.mobile.toString()) {
             userHashMap[Constants.MOBILE] = mobileNumber.toLong()
+        }
+
+        if (gender.isNotEmpty() && gender != mUserDetails.gender) {
+            userHashMap[Constants.GENDER] = gender
         }
 
         userHashMap[Constants.GENDER] = gender
@@ -184,7 +250,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
 
         Toast.makeText(this@UserProfileActivity, resources.getString(R.string.msg_profile_update_success), Toast.LENGTH_SHORT).show()
 
-        startActivity(Intent(this@UserProfileActivity, MainActivity::class.java))
+        startActivity(Intent(this@UserProfileActivity, DashboardActivity::class.java))
         finish()
     }
 
