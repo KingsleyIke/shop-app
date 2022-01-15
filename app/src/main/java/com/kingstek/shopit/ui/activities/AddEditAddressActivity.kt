@@ -182,13 +182,8 @@ class AddEditAddressActivity : BaseActivity() {
             resources.getString(R.string.err_your_address_added_successfully)
         }
 
-        Toast.makeText(
-            this@AddEditAddressActivity,
-            notifySuccessMessage,
-            Toast.LENGTH_SHORT
-        ).show()
+        Toast.makeText(this@AddEditAddressActivity, notifySuccessMessage, Toast.LENGTH_SHORT).show()
 
-        // TODO Step 13: Now se the result to OK.
         setResult(RESULT_OK)
         finish()
     }

@@ -27,9 +27,11 @@ class AddressListActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_address_list)
 
-        startActivityForResult(intent, Constants.ADD_ADDRESS_REQUEST_CODE)
+//        startActivityForResult(intent, Constants.ADD_ADDRESS_REQUEST_CODE)
+
 
         setupActionBar()
+
 
         if (mSelectAddress) {
             tv_title.text = resources.getString(R.string.title_select_address)
@@ -39,11 +41,9 @@ class AddressListActivity : BaseActivity() {
         tv_add_address.setOnClickListener {
             val intent = Intent(this@AddressListActivity, AddEditAddressActivity::class.java)
             startActivityForResult(intent, Constants.ADD_ADDRESS_REQUEST_CODE)
-            // END
         }
 
         getAddressList()
-
     }
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -93,14 +93,9 @@ class AddressListActivity : BaseActivity() {
             rv_address_list.layoutManager = LinearLayoutManager(this@AddressListActivity)
             rv_address_list.setHasFixedSize(true)
 
-            // TODO Step 9: Pass the address selection value.
-            // START
             val addressAdapter = AddressListAdapter(this@AddressListActivity, addressList, mSelectAddress)
-            // END
             rv_address_list.adapter = addressAdapter
 
-            // TODO Step 7: Don't allow user to edit or delete the address when user is about to select the address.
-            // START
             if (!mSelectAddress) {
                 val editSwipeHandler = object : SwipeToEditCallback(this) {
                     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {

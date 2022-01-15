@@ -33,8 +33,6 @@ open class AddressListAdapter(private val context: Context, private var list: Ar
             holder.itemView.tv_address_details.text = "${model.address}, ${model.zipCode}"
             holder.itemView.tv_address_mobile_number.text = model.mobileNumber
 
-            // TODO Step 10: Assign the click event to the address item when user is about to select the address.
-            // START
             if (selectAddress) {
                 holder.itemView.setOnClickListener {
                     Toast.makeText(
@@ -56,12 +54,7 @@ open class AddressListAdapter(private val context: Context, private var list: Ar
         val intent = Intent(context, AddEditAddressActivity::class.java)
         intent.putExtra(Constants.EXTRA_ADDRESS_DETAILS, list[position])
 
-        // TODO Step 15: Make it startActivityForResult instead of startActivity.
-        // START
-        // activity.startActivity (intent)
-
         activity.startActivityForResult(intent, Constants.ADD_ADDRESS_REQUEST_CODE)
-        // END
 
         notifyItemChanged(position) // Notify any registered observers that the item at position has changed.
     }

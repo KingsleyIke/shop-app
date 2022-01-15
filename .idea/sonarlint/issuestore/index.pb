@@ -35,3 +35,21 @@ x
 Happ/src/main/java/com/kingstek/shopit/ui/activities/DashboardActivity.kt,b/d/bd716fa544d267b99d77d010b3f376ca93caedc3
 v
 Fapp/src/main/java/com/kingstek/shopit/ui/fragments/ProductsFragment.kt,3/f/3f3de93ddf29609d607b3709f995f432f8537a8d
+~
+Napp/src/main/java/com/kingstek/shopit/ui/adapters/DashboardItemsListAdapter.kt,8/0/800ea408a08e1fa11b8765acb560709ade041e81
+z
+Japp/src/main/java/com/kingstek/shopit/ui/adapters/MyProductsListAdapter.kt,f/6/f647f2103fdb6f9546b5f7366f4c8b0c2bf925d2
+}
+Mapp/src/main/java/com/kingstek/shopit/ui/activities/ProductDetailsActivity.kt,1/2/126e580b610be33a9298e573ef9805b0ed447c66
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+g
+7app/src/main/java/com/kingstek/shopit/models/Address.kt,f/c/fc076971a93d90a4afa4866b829269c4e0efd7f2
+h
+8app/src/main/java/com/kingstek/shopit/utils/Constants.kt,4/6/46b98d8b46086a862d5a4bb9ec953c1c174b8e66
+t
+Dapp/src/main/java/com/kingstek/shopit/utils/SwipeToDeleteCallback.kt,b/3/b314f49b560c19a347ad73e99130d2464db4e7cd
+y
+Iapp/src/main/java/com/kingstek/shopit/ui/activities/AddProductActivity.kt,9/b/9bbc04de4ce20992ed706ddaa66b0aac964f7bcc
+r
+Bapp/src/main/java/com/kingstek/shopit/utils/SwipeToEditCallback.kt,a/a/aa5890d65e53cd242ae703bb8d458c6c7d088e1e
