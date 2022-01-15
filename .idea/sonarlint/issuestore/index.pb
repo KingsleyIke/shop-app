@@ -41,8 +41,6 @@ z
 Japp/src/main/java/com/kingstek/shopit/ui/adapters/MyProductsListAdapter.kt,f/6/f647f2103fdb6f9546b5f7366f4c8b0c2bf925d2
 }
 Mapp/src/main/java/com/kingstek/shopit/ui/activities/ProductDetailsActivity.kt,1/2/126e580b610be33a9298e573ef9805b0ed447c66
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 g
 7app/src/main/java/com/kingstek/shopit/models/Address.kt,f/c/fc076971a93d90a4afa4866b829269c4e0efd7f2
 h
