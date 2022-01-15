@@ -23,6 +23,8 @@ class CheckoutActivity : BaseActivity() {
     private lateinit var mCartItemsList: ArrayList<Cart>
     private var mSubTotal: Double = 0.0
     private var mTotalAmount: Double = 0.0
+    private lateinit var mOrderDetails: Order
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,7 +83,7 @@ class CheckoutActivity : BaseActivity() {
 
         showProgressDialog(resources.getString(R.string.please_wait))
 
-        val order = Order(
+        mOrderDetails = Order(
             FirestoreClass().getCurrentUserID(),
             mCartItemsList,
             mAddressDetails!!,
@@ -92,7 +94,7 @@ class CheckoutActivity : BaseActivity() {
             mTotalAmount.toString(),
         )
 
-        FirestoreClass().placeOrder(this@CheckoutActivity, order)
+        FirestoreClass().placeOrder(this@CheckoutActivity, mOrderDetails)
     }
 
 
@@ -153,10 +155,16 @@ class CheckoutActivity : BaseActivity() {
 
     fun orderPlacedSuccess() {
 
+        FirestoreClass().updateAllDetails(this@CheckoutActivity, mCartItemsList, mOrderDetails)
+
+    }
+
+    fun allDetailsUpdatedSuccessfully() {
+
+        // Hide the progress dialog.
         hideProgressDialog()
 
-        Toast.makeText(this@CheckoutActivity, "Your order placed successfully.", Toast.LENGTH_SHORT)
-            .show()
+        Toast.makeText(this@CheckoutActivity, "Your order placed successfully.", Toast.LENGTH_SHORT).show()
 
         val intent = Intent(this@CheckoutActivity, DashboardActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

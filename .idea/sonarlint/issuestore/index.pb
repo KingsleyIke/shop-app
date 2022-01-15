@@ -15,8 +15,6 @@ s
 Capp/src/main/java/com/kingstek/shopit/ui/activities/MainActivity.kt,d/a/da3acc9607005f39c4be9980ef62883f73c72ee2
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
-t
-Dapp/src/main/java/com/kingstek/shopit/ui/fragments/OrdersFragment.kt,7/5/751c5a621ee045f98847d2bf1fe4f22e5a0db772
 s
 Capp/src/main/java/com/kingstek/shopit/ui/activities/BaseActivity.kt,6/c/6c809d82897d7e737e1b0e5b43c78c3431bf1cb7
 t
@@ -25,10 +23,6 @@ z
 Japp/src/main/java/com/kingstek/shopit/ui/activities/UserProfileActivity.kt,f/6/f626918addda21d04ff83afec83a76896c175447
 g
 7app/src/main/java/com/kingstek/shopit/models/Product.kt,5/d/5dc1d9fe3d53d1910c69c564a8e9efc53ae82026
-r
-Bapp/src/main/java/com/kingstek/shopit/ui/fragments/BaseFragment.kt,e/b/eb5b0e1009b98cb4cb116adab74612ff0e8ae748
-j
-:app/src/main/java/com/kingstek/shopit/utils/GlideLoader.kt,9/5/95929a90c414d5c01c55672e38a20a9080afd835
 x
 Happ/src/main/java/com/kingstek/shopit/ui/activities/DashboardActivity.kt,b/d/bd716fa544d267b99d77d010b3f376ca93caedc3
 v

@@ -42,7 +42,7 @@
         <entry key="app/src/main/res/layout/dialog_progress.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_base.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.26481481481481484" />
-        <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.14947916666666666" />
+        <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_products.xml" value="0.14947916666666666" />
         <entry key="app/src/main/res/layout/item_address_layout.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/item_cart_layout.xml" value="0.24947916666666667" />
