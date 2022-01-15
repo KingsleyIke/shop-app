@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.shopit.R
 import com.kingstek.shopit.models.Order
+import com.kingstek.shopit.ui.activities.MyOrderDetailsActivity
 import com.kingstek.shopit.utils.Constants
 import com.kingstek.shopit.utils.GlideLoader
 import kotlinx.android.synthetic.main.item_list_layout.view.*
