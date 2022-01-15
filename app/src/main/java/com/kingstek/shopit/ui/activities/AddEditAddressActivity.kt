@@ -2,7 +2,9 @@ package com.kingstek.shopit.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
+import android.widget.Toast
 import com.kingstek.shopit.R
 import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.Address
@@ -79,6 +81,46 @@ class AddEditAddressActivity : BaseActivity() {
         toolbar_add_edit_address_activity.setNavigationOnClickListener { onBackPressed() }
     }
 
+    private fun validateData(): Boolean {
+        return when {
+
+            TextUtils.isEmpty(et_full_name.text.toString().trim { it <= ' ' }) -> {
+                showErrorSnackBar(
+                    resources.getString(R.string.err_msg_please_enter_full_name),
+                    true
+                )
+                false
+            }
+
+            TextUtils.isEmpty(et_phone_number.text.toString().trim { it <= ' ' }) -> {
+                showErrorSnackBar(
+                    resources.getString(R.string.err_msg_please_enter_phone_number),
+                    true
+                )
+                false
+            }
+
+            TextUtils.isEmpty(et_address.text.toString().trim { it <= ' ' }) -> {
+                showErrorSnackBar(resources.getString(R.string.err_msg_please_enter_address), true)
+                false
+            }
+
+            TextUtils.isEmpty(et_zip_code.text.toString().trim { it <= ' ' }) -> {
+                showErrorSnackBar(resources.getString(R.string.err_msg_please_enter_zip_code), true)
+                false
+            }
+
+            rb_other.isChecked && TextUtils.isEmpty(
+                et_zip_code.text.toString().trim { it <= ' ' }) -> {
+                showErrorSnackBar(resources.getString(R.string.err_msg_please_enter_zip_code), true)
+                false
+            }
+            else -> {
+                true
+            }
+        }
+    }
+
     private fun saveAddressToFirestore() {
 
         // Here we get the text from editText and trim the space
@@ -129,4 +171,25 @@ class AddEditAddressActivity : BaseActivity() {
         }
     }
 
+    fun addUpdateAddressSuccess() {
+
+        // Hide progress dialog
+        hideProgressDialog()
+
+        val notifySuccessMessage: String = if (mAddressDetails != null && mAddressDetails!!.id.isNotEmpty()) {
+            resources.getString(R.string.msg_your_address_updated_successfully)
+        } else {
+            resources.getString(R.string.err_your_address_added_successfully)
+        }
+
+        Toast.makeText(
+            this@AddEditAddressActivity,
+            notifySuccessMessage,
+            Toast.LENGTH_SHORT
+        ).show()
+
+        // TODO Step 13: Now se the result to OK.
+        setResult(RESULT_OK)
+        finish()
+    }
 }
