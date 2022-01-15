@@ -34,7 +34,6 @@ class AddressListActivity : BaseActivity() {
 
         setupActionBar()
 
-
         if (mSelectAddress) {
             tv_title.text = resources.getString(R.string.title_select_address)
         }
