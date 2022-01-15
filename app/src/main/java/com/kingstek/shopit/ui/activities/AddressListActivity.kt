@@ -27,6 +27,7 @@ class AddressListActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_address_list)
 
+        //todo fix issues
 //        startActivityForResult(intent, Constants.ADD_ADDRESS_REQUEST_CODE)
 
 
