@@ -3,8 +3,6 @@ package com.kingstek.shopit.models
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
-// TODO Step 1: Create a data model class for Order Items with required fields.
-// START
 /**
  * A data model class for Order item with required fields.
  */
@@ -20,4 +18,3 @@ data class Order(
     val total_amount: String = "",
     var id: String = ""
 ) : Parcelable
-// END

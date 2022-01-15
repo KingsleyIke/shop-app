@@ -13,6 +13,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.kingstek.shopit.models.Address
 import com.kingstek.shopit.models.Cart
+import com.kingstek.shopit.models.Order
 import com.kingstek.shopit.models.Product
 import com.kingstek.shopit.ui.activities.LoginActivity
 import com.kingstek.shopit.ui.activities.RegisterActivity
@@ -620,13 +621,26 @@ class FirestoreClass {
             }
             .addOnFailureListener { e ->
                 activity.hideProgressDialog()
-                Log.e(
-                    activity.javaClass.simpleName,
-                    "Error while deleting the address.",
-                    e
-                )
+                Log.e(activity.javaClass.simpleName, "Error while deleting the address.", e)
             }
     }
 
+    fun placeOrder(activity: CheckoutActivity, order: Order) {
+
+        mFirestore.collection(Constants.ORDERS)
+            .document()
+            // Here the userInfo are Field and the SetOption is set to merge. It is for if we wants to merge
+            .set(order, SetOptions.merge())
+            .addOnSuccessListener {
+
+                activity.orderPlacedSuccess()
+            }
+            .addOnFailureListener { e ->
+
+                // Hide the progress dialog if there is any error.
+                activity.hideProgressDialog()
+                Log.e(activity.javaClass.simpleName, "Error while placing an order.", e)
+            }
+    }
 
 }

@@ -23,8 +23,6 @@ t
 Dapp/src/main/java/com/kingstek/shopit/ui/activities/LoginActivity.kt,9/f/9f3a66d1aa98b1a8d9de244a957b37adcbf22be1
 z
 Japp/src/main/java/com/kingstek/shopit/ui/activities/UserProfileActivity.kt,f/6/f626918addda21d04ff83afec83a76896c175447
-u
-Eapp/src/main/java/com/kingstek/shopit/ui/activities/SplashActivity.kt,f/6/f655ae99d7ab5cc0ff52a3fa230062d71047ed70
 g
 7app/src/main/java/com/kingstek/shopit/models/Product.kt,5/d/5dc1d9fe3d53d1910c69c564a8e9efc53ae82026
 r

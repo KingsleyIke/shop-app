@@ -1,13 +1,16 @@
 package com.kingstek.shopit.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kingstek.shopit.R
 import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.Address
 import com.kingstek.shopit.models.Cart
+import com.kingstek.shopit.models.Order
 import com.kingstek.shopit.models.Product
 import com.kingstek.shopit.ui.adapters.CartItemsListAdapter
 import com.kingstek.shopit.utils.Constants
@@ -44,6 +47,10 @@ class CheckoutActivity : BaseActivity() {
         }
 
         getProductList()
+
+        btn_place_order.setOnClickListener {
+            placeAnOrder()
+        }
     }
 
     private fun setupActionBar() {
@@ -69,6 +76,26 @@ class CheckoutActivity : BaseActivity() {
         FirestoreClass().getCartList(this@CheckoutActivity)
     }
 
+
+    private fun placeAnOrder() {
+
+        showProgressDialog(resources.getString(R.string.please_wait))
+
+        val order = Order(
+            FirestoreClass().getCurrentUserID(),
+            mCartItemsList,
+            mAddressDetails!!,
+            "My order ${System.currentTimeMillis()}",
+            mCartItemsList[0].image,
+            mSubTotal.toString(),
+            "10.0", // The Shipping Charge is fixed as $10 for now in our case.
+            mTotalAmount.toString(),
+        )
+
+        FirestoreClass().placeOrder(this@CheckoutActivity, order)
+    }
+
+
     fun successCartItemsList(cartList: ArrayList<Cart>) {
 
         // Hide progress dialog.
@@ -90,8 +117,6 @@ class CheckoutActivity : BaseActivity() {
         val cartListAdapter = CartItemsListAdapter(this@CheckoutActivity, mCartItemsList, false)
         rv_cart_list_items.adapter = cartListAdapter
 
-        // TODO Step 4: Replace the subTotal and totalAmount variables with the global variables.
-        // START
         for (item in mCartItemsList) {
 
             val availableQuantity = item.stock_quantity.toInt()
@@ -123,5 +148,19 @@ class CheckoutActivity : BaseActivity() {
         showProgressDialog(resources.getString(R.string.please_wait))
 
         FirestoreClass().getAllProductsList(this@CheckoutActivity)
+    }
+
+
+    fun orderPlacedSuccess() {
+
+        hideProgressDialog()
+
+        Toast.makeText(this@CheckoutActivity, "Your order placed successfully.", Toast.LENGTH_SHORT)
+            .show()
+
+        val intent = Intent(this@CheckoutActivity, DashboardActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }
