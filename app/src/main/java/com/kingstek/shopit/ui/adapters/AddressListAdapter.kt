@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kingstek.shopit.R
 import com.kingstek.shopit.models.Address
 import com.kingstek.shopit.ui.activities.AddEditAddressActivity
+import com.kingstek.shopit.ui.activities.CheckoutActivity
 import com.kingstek.shopit.utils.Constants
 import kotlinx.android.synthetic.main.item_address_layout.view.*
 
@@ -35,14 +36,11 @@ open class AddressListAdapter(private val context: Context, private var list: Ar
 
             if (selectAddress) {
                 holder.itemView.setOnClickListener {
-                    Toast.makeText(
-                        context,
-                        "Selected address : ${model.address}, ${model.zipCode}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    val intent = Intent(context, CheckoutActivity::class.java)
+                    intent.putExtra(Constants.EXTRA_SELECTED_ADDRESS, model)
+                    context.startActivity(intent)
                 }
             }
-            // END
         }
     }
 

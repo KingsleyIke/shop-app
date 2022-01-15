@@ -43,8 +43,6 @@ Japp/src/main/java/com/kingstek/shopit/ui/adapters/MyProductsListAdapter.kt,f/6
 Mapp/src/main/java/com/kingstek/shopit/ui/activities/ProductDetailsActivity.kt,1/2/126e580b610be33a9298e573ef9805b0ed447c66
 g
 7app/src/main/java/com/kingstek/shopit/models/Address.kt,f/c/fc076971a93d90a4afa4866b829269c4e0efd7f2
-h
-8app/src/main/java/com/kingstek/shopit/utils/Constants.kt,4/6/46b98d8b46086a862d5a4bb9ec953c1c174b8e66
 t
 Dapp/src/main/java/com/kingstek/shopit/utils/SwipeToDeleteCallback.kt,b/3/b314f49b560c19a347ad73e99130d2464db4e7cd
 y
