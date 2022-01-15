@@ -88,6 +88,7 @@ open class CartItemsListAdapter(private val context: Context, private var list: 
 
                 val cartQuantity: Int = model.cart_quantity.toInt()
 
+                //todo chnage stock qunatity to int
                 if (cartQuantity < model.stock_quantity.toInt()) {
 
                     val itemHashMap = HashMap<String, Any>()

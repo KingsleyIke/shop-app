@@ -1,5 +1,6 @@
 package com.kingstek.shopit.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,6 +11,7 @@ import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.Cart
 import com.kingstek.shopit.models.Product
 import com.kingstek.shopit.ui.adapters.CartItemsListAdapter
+import com.kingstek.shopit.utils.Constants
 import kotlinx.android.synthetic.main.activity_cart_list.*
 
 class CartListActivity : BaseActivity() {
@@ -23,6 +25,11 @@ class CartListActivity : BaseActivity() {
 
         setupActionBar()
 
+        btn_checkout.setOnClickListener {
+            val intent = Intent(this@CartListActivity, AddressListActivity::class.java)
+            intent.putExtra(Constants.EXTRA_SELECT_ADDRESS, true)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
@@ -100,7 +107,9 @@ class CartListActivity : BaseActivity() {
 
             for (item in mCartListItems) {
 
+                //Todo fix issue, change stock quantity to int
                 val availableQuantity = item.stock_quantity.toInt()
+//                val availableQuantity = 1
 
                 if (availableQuantity > 0) {
                     val price = item.price.toDouble()
