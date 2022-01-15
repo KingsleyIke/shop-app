@@ -17,16 +17,16 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <com.myshoppal.utils.MSPTextViewBold
+        <com.kingstek.shopit.utils.MSPTextViewBold
             android:id="@+id/tv_address_full_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/item_value_text_color"
             android:textSize="@dimen/item_address_name_textSize"
-            tools:text="Denis Panjuta" />
+            android:text="Kings Ike" />
 
-        <com.myshoppal.utils.MSPTextView
+        <com.kingstek.shopit.utils.MSPTextView
             android:id="@+id/tv_address_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,24 +38,24 @@
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/address_details_textSize"
             android:textStyle="bold"
-            tools:text="Home" />
+            android:text="Home" />
     </LinearLayout>
 
-    <com.myshoppal.utils.MSPTextView
+    <com.kingstek.shopit.utils.MSPTextView
         android:id="@+id/tv_address_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/address_details_marginTop"
         android:textColor="@color/item_value_text_color"
         android:textSize="@dimen/address_details_textSize"
-        tools:text="XYZ" />
+        android:text="XYZ" />
 
-    <com.myshoppal.utils.MSPTextView
+    <com.kingstek.shopit.utils.MSPTextView
         android:id="@+id/tv_address_mobile_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/address_details_marginTop"
         android:textColor="@color/item_value_text_color"
         android:textSize="@dimen/address_details_textSize"
-        tools:text="+64 123456789" />
+        android:text="+64 123456789" />
 </LinearLayout>

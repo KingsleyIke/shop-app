@@ -13,6 +13,7 @@ import com.kingstek.shopit.R
 import com.kingstek.shopit.models.Address
 import com.kingstek.shopit.ui.activities.AddEditAddressActivity
 import com.kingstek.shopit.utils.Constants
+import kotlinx.android.synthetic.main.item_address_layout.view.*
 
 open class AddressListAdapter(private val context: Context, private var list: ArrayList<Address>, private val selectAddress: Boolean) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

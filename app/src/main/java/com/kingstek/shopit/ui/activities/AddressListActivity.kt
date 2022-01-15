@@ -15,6 +15,8 @@ import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.Address
 import com.kingstek.shopit.ui.adapters.AddressListAdapter
 import com.kingstek.shopit.utils.Constants
+import com.myshoppal.utils.SwipeToDeleteCallback
+import com.myshoppal.utils.SwipeToEditCallback
 import kotlinx.android.synthetic.main.activity_address_list.*
 
 class AddressListActivity : BaseActivity() {
