@@ -39,6 +39,9 @@ open class MyOrdersListAdapter(
                 holder.itemView.iv_item_image
             )
 
+            //todo chnage title to readable date
+//            val dateFormat = ""
+
             holder.itemView.tv_item_name.text = model.title
             holder.itemView.tv_item_price.text = "$${model.total_amount}"
 
@@ -52,16 +55,9 @@ open class MyOrdersListAdapter(
         }
     }
 
-    /**
-     * Gets the number of items in the list
-     */
     override fun getItemCount(): Int {
         return list.size
     }
 
-    /**
-     * A ViewHolder describes an item view and metadata about its place within the RecyclerView.
-     */
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view)
 }
-// END
