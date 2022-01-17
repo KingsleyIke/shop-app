@@ -30,6 +30,7 @@ import com.kingstek.shopit.ui.activities.SettingsActivity
 import com.kingstek.shopit.ui.fragments.DashboardFragment
 import com.kingstek.shopit.ui.fragments.OrdersFragment
 import com.kingstek.shopit.ui.fragments.ProductsFragment
+import com.kingstek.shopit.ui.fragments.SoldProductsFragment
 import com.kingstek.shopit.utils.Constants
 import com.kingstek.shopit.utils.Constants.USERS
 
@@ -680,7 +681,7 @@ class FirestoreClass {
         for (cart in cartList) {
 
             val soldProduct = SoldProduct(
-                FirestoreClass().getCurrentUserID(),
+                cart.product_owner_id,
                 cart.title,
                 cart.price,
                 cart.cart_quantity,
@@ -734,6 +735,41 @@ class FirestoreClass {
                 e
             )
         }
+    }
+
+    fun getSoldProductsList(fragment: SoldProductsFragment) {
+        // The collection name for SOLD PRODUCTS
+        mFirestore.collection(Constants.SOLD_PRODUCTS)
+            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
+            .get() // Will get the documents snapshots.
+            .addOnSuccessListener { document ->
+                // Here we get the list of sold products in the form of documents.
+                Log.e(fragment.javaClass.simpleName, document.documents.toString())
+
+                // Here we have created a new instance for Sold Products ArrayList.
+                val list: ArrayList<SoldProduct> = ArrayList()
+
+                // A for loop as per the list of documents to convert them into Sold Products ArrayList.
+                for (i in document.documents) {
+
+                    val soldProduct = i.toObject(SoldProduct::class.java)!!
+                    soldProduct.id = i.id
+
+                    list.add(soldProduct)
+                }
+
+                fragment.successSoldProductsList(list)
+            }
+            .addOnFailureListener { e ->
+                // Hide the progress dialog if there is any error.
+                fragment.hideProgressDialog()
+
+                Log.e(
+                    fragment.javaClass.simpleName,
+                    "Error while getting the list of sold products.",
+                    e
+                )
+            }
     }
 
 }
