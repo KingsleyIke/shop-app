@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.kingstek.shopit.R
 import com.kingstek.shopit.firestore.FirestoreClass
 import com.kingstek.shopit.models.SoldProduct
+import com.kingstek.shopit.ui.adapters.SoldProductsListAdapter
 import kotlinx.android.synthetic.main.fragment_sold_products.*
 
 /**
@@ -52,9 +53,9 @@ class SoldProductsFragment : BaseFragment() {
             rv_sold_product_items.layoutManager = LinearLayoutManager(activity)
             rv_sold_product_items.setHasFixedSize(true)
 
-//            val soldProductsListAdapter =
-//                SoldProductsListAdapter(requireActivity(), soldProductsList)
-//            rv_sold_product_items.adapter = soldProductsListAdapter
+            val soldProductsListAdapter =
+                SoldProductsListAdapter(requireActivity(), soldProductsList)
+            rv_sold_product_items.adapter = soldProductsListAdapter
         } else {
             rv_sold_product_items.visibility = View.GONE
             tv_no_sold_products_found.visibility = View.VISIBLE

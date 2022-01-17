@@ -6,13 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.kingstek.shopit.R
+import com.kingstek.shopit.models.SoldProduct
+import com.kingstek.shopit.ui.activities.SoldProductDetailsActivity
+import com.kingstek.shopit.utils.Constants
 import com.kingstek.shopit.utils.GlideLoader
-import com.myshoppal.R
-import com.myshoppal.models.SoldProduct
-import com.myshoppal.ui.activities.MyOrderDetailsActivity
-import com.myshoppal.ui.activities.SoldProductDetailsActivity
-import com.myshoppal.utils.Constants
-import com.myshoppal.utils.GlideLoader
 import kotlinx.android.synthetic.main.item_list_layout.view.*
 
 /**
