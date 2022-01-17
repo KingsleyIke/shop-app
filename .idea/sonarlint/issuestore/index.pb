@@ -9,8 +9,6 @@ d
 4app/src/main/java/com/kingstek/shopit/models/User.kt,3/2/32e59e302b8bfcaf461e6d69606aa5a902d95bf3
 }
 Mapp/src/main/java/com/kingstek/shopit/ui/activities/ForgotPasswordActivity.kt,8/2/8291926d0aa36a068fd59f9b1b8f0bc92050c2ba
-w
-Gapp/src/main/java/com/kingstek/shopit/ui/activities/RegisterActivity.kt,4/c/4c61ef5816fbc65e76e7e501a6d265e1b1353299
 s
 Capp/src/main/java/com/kingstek/shopit/ui/activities/MainActivity.kt,d/a/da3acc9607005f39c4be9980ef62883f73c72ee2
 @
@@ -23,16 +21,12 @@ z
 Japp/src/main/java/com/kingstek/shopit/ui/activities/UserProfileActivity.kt,f/6/f626918addda21d04ff83afec83a76896c175447
 g
 7app/src/main/java/com/kingstek/shopit/models/Product.kt,5/d/5dc1d9fe3d53d1910c69c564a8e9efc53ae82026
-x
-Happ/src/main/java/com/kingstek/shopit/ui/activities/DashboardActivity.kt,b/d/bd716fa544d267b99d77d010b3f376ca93caedc3
 v
 Fapp/src/main/java/com/kingstek/shopit/ui/fragments/ProductsFragment.kt,3/f/3f3de93ddf29609d607b3709f995f432f8537a8d
 ~
 Napp/src/main/java/com/kingstek/shopit/ui/adapters/DashboardItemsListAdapter.kt,8/0/800ea408a08e1fa11b8765acb560709ade041e81
 z
 Japp/src/main/java/com/kingstek/shopit/ui/adapters/MyProductsListAdapter.kt,f/6/f647f2103fdb6f9546b5f7366f4c8b0c2bf925d2
-}
-Mapp/src/main/java/com/kingstek/shopit/ui/activities/ProductDetailsActivity.kt,1/2/126e580b610be33a9298e573ef9805b0ed447c66
 g
 7app/src/main/java/com/kingstek/shopit/models/Address.kt,f/c/fc076971a93d90a4afa4866b829269c4e0efd7f2
 t
