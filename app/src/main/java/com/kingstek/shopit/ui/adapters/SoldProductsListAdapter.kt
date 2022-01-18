@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.item_list_layout.view.*
  * A adapter class for sold products list items.
  */
 open class SoldProductsListAdapter(
-    git add
     private val context: Context,
     private var list: ArrayList<SoldProduct>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
