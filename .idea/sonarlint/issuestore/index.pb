@@ -15,8 +15,6 @@ Capp/src/main/java/com/kingstek/shopit/ui/activities/MainActivity.kt,d/a/da3acc
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 s
 Capp/src/main/java/com/kingstek/shopit/ui/activities/BaseActivity.kt,6/c/6c809d82897d7e737e1b0e5b43c78c3431bf1cb7
-t
-Dapp/src/main/java/com/kingstek/shopit/ui/activities/LoginActivity.kt,9/f/9f3a66d1aa98b1a8d9de244a957b37adcbf22be1
 z
 Japp/src/main/java/com/kingstek/shopit/ui/activities/UserProfileActivity.kt,f/6/f626918addda21d04ff83afec83a76896c175447
 g
