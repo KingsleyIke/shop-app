@@ -94,6 +94,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         // Hide the progress dialog
         hideProgressDialog()
 
+        //Toast
         Toast.makeText(
             this@AddProductActivity,
             resources.getString(R.string.product_uploaded_success_message),

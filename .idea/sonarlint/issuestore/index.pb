@@ -29,7 +29,5 @@ g
 7app/src/main/java/com/kingstek/shopit/models/Address.kt,f/c/fc076971a93d90a4afa4866b829269c4e0efd7f2
 t
 Dapp/src/main/java/com/kingstek/shopit/utils/SwipeToDeleteCallback.kt,b/3/b314f49b560c19a347ad73e99130d2464db4e7cd
-y
-Iapp/src/main/java/com/kingstek/shopit/ui/activities/AddProductActivity.kt,9/b/9bbc04de4ce20992ed706ddaa66b0aac964f7bcc
 r
 Bapp/src/main/java/com/kingstek/shopit/utils/SwipeToEditCallback.kt,a/a/aa5890d65e53cd242ae703bb8d458c6c7d088e1e
