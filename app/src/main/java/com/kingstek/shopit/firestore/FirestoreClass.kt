@@ -659,7 +659,6 @@ class FirestoreClass {
 
         mFirestore.collection(Constants.ORDERS)
             .document()
-            // Here the userInfo are Field and the SetOption is set to merge. It is for if we wants to merge
             .set(order, SetOptions.merge())
             .addOnSuccessListener {
 
@@ -677,7 +676,6 @@ class FirestoreClass {
 
         val writeBatch = mFirestore.batch()
 
-        // Prepare the sold product details
         for (cart in cartList) {
 
             val soldProduct = SoldProduct(
