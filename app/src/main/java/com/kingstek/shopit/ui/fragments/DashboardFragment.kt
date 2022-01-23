@@ -23,7 +23,6 @@ class DashboardFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // If we want to use the option menu in fragment we need to add it.
         setHasOptionsMenu(true)
     }
 
@@ -39,9 +38,8 @@ class DashboardFragment : BaseFragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
 
-        when (id) {
+        when (item.itemId) {
             R.id.action_settings -> {
                 startActivity((Intent(activity, SettingsActivity::class.java)))
                 return true
